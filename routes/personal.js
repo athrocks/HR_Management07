@@ -3,7 +3,7 @@ var router = express.Router();
 
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/dbmsProject");
+// mongoose.connect("mongodb://127.0.0.1:27017/dbmsProject");
 
 const personalSchema = mongoose.Schema({
   employeeName4: {
