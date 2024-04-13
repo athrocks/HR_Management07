@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+      crossorigin=""
+    />
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="/stylesheets/swiper-bundle.min2.css" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="/stylesheets/styles22.css" />
+
+    <title>Slider</title>
+  </head>
+  <body>
+    <section class="container">
+      <div class="card__container swiper">
+        <div class="card__content">
+          <div class="swiper-wrapper">
+            <article class="card__article swiper-slide">
+              <div class="card__image">
+                <img src="/images/s1.png" alt="image" class="card__img" />
+
+                <div class="card__shadow"></div>
+              </div>
+
+              <div class="card__data">
+                <h3 class="card__name">Employee Project</h3>
+                <p class="card__description">
+                  Past data and current working data of Employee project-works
+                  according to their domain.
+                </p>
+
+                <!-- <a href="#" class="card__button">View More</a> -->
+                <form action="/button1" method="POST">
+                  <button type="submit" class="card__button">View More</button>
+                </form>
+              </div>
+            </article>
+
+            <article class="card__article swiper-slide">
+              <div class="card__image">
+                <img src="/images/s2.png" alt="image" class="card__img" />
+                <div class="card__shadow"></div>
+              </div>
+
+              <div class="card__data">
+                <h3 class="card__name">Employee Work Experience</h3>
+                <p class="card__description">
+                  Get to know about past working Experience and respective years
+                  of the Employee in company.
+                </p>
+
+                <!-- <a href="#" class="card__button">View More</a> -->
+                <form action="/button2" method="POST">
+                  <button type="submit" class="card__button">View More</button>
+                </form>
+              </div>
+            </article>
+
+            <article class="card__article swiper-slide">
+              <div class="card__image">
+                <img src="/images/s3.png" alt="image" class="card__img" />
+                <div class="card__shadow"></div>
+              </div>
+
+              <div class="card__data">
+                <h3 class="card__name">Employee details</h3>
+                <p class="card__description">
+                  Overall details of Employee, including personal details
+                  (Age,Blood group,CV,etc).
+                </p>
+
+                <!-- <a href="#" class="card__button">View More</a> -->
+                <form action="/button3" method="POST">
+                  <button type="submit" class="card__button">View More</button>
+                </form>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="swiper-button-next">
+          <i class="ri-arrow-right-s-line"></i>
+        </div>
+
+        <div class="swiper-button-prev">
+          <i class="ri-arrow-left-s-line"></i>
+        </div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!--=============== SWIPER JS ===============-->
+    <!-- <script src="assets/js/swiper-bundle.min.js"></script> -->
+    <script src="/javascripts/swiper-bundle.min2.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <!-- <script src="assets/js/main.js"></script> -->
+    <script src="/javascripts/smain.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+body {
+    background-color: hsl(212, 40%, 12%);;
+  }
+  
+  .card {
+    background-color: grey;
+  }
+  
+  .btn-primary {
+    background-color:hsl(32, 75%, 50%);
+    border-color: hsl(32, 75%, 50%);
+  }
+
+  
+  

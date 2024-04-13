@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Work Experience List</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/styles45.css">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">Work Experience Data</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Joining Year</th>
+            <th>Work Experience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% experience.forEach(experience1 => { %>
+          <tr>
+            <td><%= experience1.employeeName2 %></td>
+            <td><%= experience1.email3 %></td>
+            <td><%= experience1.year %></td>
+            <td><%= experience1.course %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

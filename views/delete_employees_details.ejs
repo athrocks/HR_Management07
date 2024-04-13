@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Delete Employee</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+
+    <link rel="stylesheet" href="/stylesheets/style3.css" />
+  </head>
+  <body>
+    <div class="container-fluid" style="margin-top: 200px;">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="card mt-5">
+            <div class="card-body">
+              <h1 class="text-center mb-4"><b>Delete Employee</b></h1>
+
+              <form
+                action="/delete_employee"
+                method="post"
+                id="deleteEmployeeForm"
+              >
+                <div class="form-group">
+                  <label for="name"><b>Name:</b></label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="employeeName"
+                    required
+                    placeholder="Enter Employee full name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email"><b>Email:</b></label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email2"
+                    required
+                    placeholder="Enter Employee email"
+                  />
+                </div>
+                <button type="submit" class="btn btn-danger btn-block">
+                  Delete Employee
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HR managemnt</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style4.css" />
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="card mt-5">
+            <div class="card-body">
+              <h1 class="text-center mb-4"><b>Employee Work Experience</b></h1>
+              <form action="/work_experience" method="post" id="workExperience">
+                <div class="form-group">
+                  <label for="name"><b>Name:</b></label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="employeeName2"
+                    required
+                    placeholder="Enter Employee full name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email"><b>Email:</b></label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email3"
+                    required
+                    placeholder="Enter Employee email"
+                  />
+                  <span id="emailError" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                  <label for="year"><b>Employee Joining Year:</b></label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="year"
+                    name="year"
+                    required
+                    placeholder="Enter Employee Joining year"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="course"><b>Total Work experience:</b></label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="course"
+                    name="course"
+                    required
+                    placeholder="Enter Employee Work Experience"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="gender"><b>Gender:</b></label>
+                  <select class="form-control" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                  SUBMIT
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("workExperience");
+      const emailInput = document.getElementById("email");
+      const emailError = document.getElementById("emailError");
+
+      form.addEventListener("submit", function (event) {
+        if (!emailInput.checkValidity()) {
+          // Prevent form submission
+          event.preventDefault();
+          // Show error message
+          emailError.textContent = "Please enter a valid email address.";
+        } else {
+          // Clear error message if email is valid
+          emailError.textContent = "";
+        }
+      });
+    </script>
+  </body>
+</html>
