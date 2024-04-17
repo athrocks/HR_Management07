@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/stylesheets/style3.css" />
   </head>
   <body>
-    <div class="container-fluid" style="margin-top: 200px;">
+    <div class="container-fluid" style="margin-top: 200px">
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
@@ -57,5 +57,34 @@
         <div class="col-md-4"></div>
       </div>
     </div>
+
+    <% if (typeof successMessage !== 'undefined') { %>
+    <div id="successMessage" class="alert alert-success mt-3" role="alert">
+      <%= successMessage %>
+    </div>
+    <script>
+      setTimeout(function () {
+        var successMessage = document.getElementById("successMessage");
+        if (successMessage) {
+          successMessage.remove();
+        }
+      }, 5000);
+    </script>
+    <% } %> 
+    
+    <% if (typeof failureMessage !== 'undefined') { %>
+    <div id="failureMessage" class="alert alert-danger mt-3" role="alert">
+      <%= failureMessage %>
+    </div>
+    <script>
+      setTimeout(function () {
+        var failureMessage = document.getElementById("failureMessage");
+        if (failureMessage) {
+          failureMessage.remove();
+        }
+      }, 5000);
+    </script>
+    <% } %>
+    
   </body>
 </html>

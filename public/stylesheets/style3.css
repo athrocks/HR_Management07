@@ -4,10 +4,27 @@ body {
 
 .card {
   background-color: grey;
-  /* margin-top: 200px; */
 }
 
 .btn-primary {
   background-color: hsl(32, 75%, 50%);
   border-color: hsl(32, 75%, 50%);
+}
+
+@media (max-width: 576px) {
+  .card {
+    margin-top: 20px; 
+  }
+  
+  .form-group label {
+    font-size: 14px; 
+  }
+
+  .form-control {
+    font-size: 14px; 
+  }
+  
+  .btn-primary {
+    font-size: 16px;
+  }
 }

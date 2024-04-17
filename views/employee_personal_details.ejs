@@ -9,7 +9,6 @@
     />
     <link rel="stylesheet" href="/stylesheets/style7.css" />
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
-
   </head>
   <body>
     <div class="container-fluid">
@@ -28,6 +27,7 @@
                     id="name"
                     name="employeeName4"
                     required
+                    autocomplete="off"
                     placeholder="Enter Employee full name"
                   />
                 </div>
@@ -39,6 +39,7 @@
                     id="email"
                     name="email4"
                     required
+                    autocomplete="off"
                     placeholder="Enter Employee email"
                   />
                   <span id="emailError" class="error-message"></span>
@@ -50,6 +51,7 @@
                     class="form-control"
                     id="year"
                     name="age"
+                    autocomplete="off"
                     required
                     placeholder="Enter Employee Age"
                   />
@@ -63,6 +65,7 @@
                     id="course"
                     name="bloodGroup"
                     required
+                    autocomplete="off"
                     placeholder="Enter Employee Blood Group"
                   />
                 </div>
@@ -100,13 +103,32 @@
           emailError.textContent = "";
         }
       });
-
-      // setTimeout(() => {
-      //   const successMessage = document.querySelector(".alert-success");
-      //   if (successMessage) {
-      //     successMessage.style.display = "none";
-      //   }
-      // }, 5000);
     </script>
+
+    <% if (typeof successMessage !== 'undefined') { %>
+    <div id="successMessage" class="alert alert-success mt-3" role="alert">
+      <%= successMessage %>
+    </div>
+    <script>
+      setTimeout(function () {
+        var successMessage = document.getElementById("successMessage");
+        if (successMessage) {
+          successMessage.remove();
+        }
+      }, 5000);
+    </script>
+    <% } %> <% if (typeof failureMessage !== 'undefined') { %>
+    <div id="failureMessage" class="alert alert-danger mt-3" role="alert">
+      <%= failureMessage %>
+    </div>
+    <script>
+      setTimeout(function () {
+        var failureMessage = document.getElementById("failureMessage");
+        if (failureMessage) {
+          failureMessage.remove();
+        }
+      }, 5000);
+    </script>
+    <% } %>
   </body>
 </html>

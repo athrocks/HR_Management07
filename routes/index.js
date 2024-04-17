@@ -60,6 +60,7 @@ router.post("/signup", async (req, res) => {
   }
 });
 
+// Slider
 router.post("/abc", (req, res, next) => {
   passport.authenticate("plain", (err, user, info) => {
     if (err) {
@@ -111,12 +112,14 @@ router.post("/add_employee2", async (req, res) => {
 
     await newEmployee.save();
 
-    res.render("add_employee", {
-      successMessage: "Employee added successfully",
-    });
+    const successMessage = "Employee added successfully";
+
+    res.render("add_employee", { successMessage });
   } catch (error) {
     console.error("Error saving employee details:", error);
-    res.status(500).json({ error: "Failed to save employee details" });
+    // res.status(500).json({ error: "Failed to save employee details" });
+    const failureMessage = "Failed to save employee details";
+    res.render("add_employee", { failureMessage });
   }
 });
 
@@ -141,12 +144,13 @@ router.post("/work_experience", async (req, res) => {
 
     await newExperience.save();
 
-    res.render("employee_work_experience", {
-      successMessage: "Experience added successfully",
-    });
+    const successMessage = "Experience added successfully";
+    res.render("employee_work_experience", { successMessage });
   } catch (error) {
     console.error("Error saving experience details:", error);
-    res.status(500).json({ error: "Failed to save experience details" });
+    // res.status(500).json({ error: "Failed to save experience details" });
+    const failureMessage = "Failed to save experience details";
+    res.render("employee_work_experience", { failureMessage });
   }
 });
 
@@ -176,7 +180,10 @@ router.post("/personal_details", async (req, res) => {
     });
   } catch (error) {
     console.error("Error saving personal details:", error);
-    res.status(500).json({ error: "Failed to save personal details" });
+    res.render("employee_work_experience", {
+      failureMessage: "Failed to save personal details",
+    });
+    // res.status(500).json({ error: "Failed to save personal details" });
   }
 });
 
@@ -184,9 +191,7 @@ router.post("/personal_details", async (req, res) => {
 
 router.get("/employeeList", async function (req, res, next) {
   try {
-    // Fetch all employees from the database
     const employees = await Employee.find({});
-    // Render employeeList.ejs with employee data
     res.render("employeeList", { employees: employees });
   } catch (err) {
     console.error("Error fetching employees:", err);
@@ -207,12 +212,20 @@ router.post("/delete_employee", async (req, res) => {
 
     if (result.deletedCount === 0) {
       return res.status(404).send("Employee not found");
+      // res.render("delete_employees_details", {
+      //   message: "Employee not found",
+      // });
     }
-
-    res.status(200).send("Employee deleted successfully");
+    res.render("delete_employees_details", {
+      successMessage: "Employee deleted successfully",
+    });
+    // res.status(200).send("Employee deleted successfully");
   } catch (err) {
     console.error(err);
-    res.status(500).send("Server error");
+    res.render("delete_employees_details", {
+      failureMessage: "Failed to delete Employee",
+    });
+    // res.status(500).send("Server error");
   }
 });
 

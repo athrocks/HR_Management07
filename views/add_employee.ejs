@@ -9,8 +9,6 @@
     />
     <link rel="stylesheet" href="/stylesheets/style3.css" />
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
-
-    
   </head>
   <body>
     <div class="container-fluid">
@@ -30,6 +28,7 @@
                     id="name"
                     name="employeeName"
                     required
+                    autocomplete="off"
                     placeholder="Enter Employee full name"
                   />
                 </div>
@@ -41,6 +40,7 @@
                     id="email"
                     name="email2"
                     required
+                    autocomplete="off"
                     placeholder="Enter Employee email"
                   />
                   <span id="emailError" class="error-message"></span>
@@ -53,6 +53,7 @@
                     id="name"
                     name="projectName"
                     required
+                    autocomplete="off"
                     placeholder="Enter Employee Workspace"
                   />
                 </div>
@@ -65,6 +66,7 @@
                     id="course"
                     name="projectDomain"
                     required
+                    autocomplete="off"
                     placeholder="Enter Employee Project Domain"
                   />
                 </div>
@@ -93,22 +95,42 @@
 
       form.addEventListener("submit", function (event) {
         if (!emailInput.checkValidity()) {
-          // Prevent form submission
           event.preventDefault();
-          // Show error message
           emailError.textContent = "Please enter a valid email address.";
         } else {
-          // Clear error message if email is valid
           emailError.textContent = "";
         }
       });
-
-      // setTimeout(() => {
-      //   const successMessage = document.querySelector(".alert-success");
-      //   if (successMessage) {
-      //     successMessage.style.display = "none";
-      //   }
-      // }, 5000);
     </script>
+
+    <% if (typeof successMessage !== 'undefined') { %>
+      <div id="successMessage" class="alert alert-success mt-3" role="alert">
+        <%= successMessage %>
+      </div>
+      <script>
+        setTimeout(function() {
+          var successMessage = document.getElementById('successMessage');
+          if (successMessage) {
+            successMessage.remove();
+          }
+        }, 5000);
+      </script>
+    <% } %>    
+
+    <% if (typeof failureMessage !== 'undefined') { %>
+      <div id="failureMessage" class="alert alert-danger mt-3" role="alert">
+        <%= failureMessage %>
+      </div>
+      <script>
+        setTimeout(function() {
+          var failureMessage = document.getElementById('failureMessage');
+          if (failureMessage) {
+            failureMessage.remove();
+          }
+        }, 5000);
+      </script>
+    <% } %>
+    
+    
   </body>
 </html>

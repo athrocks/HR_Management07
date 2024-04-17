@@ -69,13 +69,13 @@ img {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease; */
 
 }
 
-.card__article:hover {
+/* .card__article:hover {
   transform: translateY(-5px);
-}
+} */
 
 
 .card__image {
