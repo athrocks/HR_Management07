@@ -22,19 +22,39 @@
             <th>Email</th>
             <th>Joining Year</th>
             <th>Work Experience</th>
+            <th>Salary(Rs)</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
           <% experience.forEach(experience1 => { %>
           <tr>
-            <td><%= experience1.employeeName2 %></td>
-            <td><%= experience1.email3 %></td>
+            <td><%= experience1.employeeName %></td>
+            <td><%= experience1.email %></td>
             <td><%= experience1.year %></td>
             <td><%= experience1.course %></td>
+            <td><%= experience1.salary %></td>
+            <td>
+              <form action="/delete_work_experience_button" method="post">
+                <input
+                  type="hidden"
+                  name="employeeId"
+                  value="<%= experience1.id %>"
+                />
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </td>
           </tr>
           <% }) %>
         </tbody>
       </table>
+      <form
+        action="/employee_work_experience_button"
+        method="post"
+        class="text-center"
+      >
+        <button type="submit" class="btn btn-primary">Add Work Experience</button>
+      </form>
     </div>
   </body>
 </html>

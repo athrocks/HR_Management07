@@ -5,27 +5,47 @@ const mongoose = require("mongoose");
 
 // mongoose.connect("mongodb://127.0.0.1:27017/dbmsProject");
 
-const personalSchema = mongoose.Schema({
-  employeeName4: {
+const mainSchema = mongoose.Schema({
+  employeeName: {
     type: String,
     required: true,
   },
-  email4: {
+  email: {
     type: String,
     required: true,
     unique: true,
   },
+  projectName: {
+    type: String,
+    // required: true,
+  },
+  projectDomain: {
+    type: String,
+    // required: true,
+  },
   age: {
     type: Number,
-    required: true,
+    // required: true,
+  },
+  salary: {
+    type: Number,
+    // required: true,
   },
   bloodGroup: {
     type: String,
-    required: true,
+    // required: true,
+  },
+  year: {
+    type: Number,
+    // required: true,
+  },
+  course: {
+    type: String,
+    // required: true,
   },
 });
 
-const Personal = mongoose.model("Personal", personalSchema);
+const MainDB = mongoose.model("MainDB", mainSchema);
 
 const db = mongoose.connection;
 
@@ -37,4 +57,4 @@ db.on("error", (err) => {
   console.error("Failed to connect to MongoDB", err);
 });
 
-module.exports = Personal;
+module.exports = MainDB;

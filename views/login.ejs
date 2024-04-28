@@ -1,68 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/stylelogin.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/stylelogin.css" />
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+  </head>
 
-</head>
-
-
-<body>
-    <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <form action="/signup" method="post">
-                <h1>Create Account</h1>
-                <div class="social-container">
-                    <a href="" target="_blank" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="/" target="_blank" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="" target="_blank" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>Or use your email ID</span>
-                <input type="email" placeholder="Email" name="email" autocomplete="off" required/>
-                <input type="text" placeholder="Name" name="username" autocomplete="off" required/>
-                <input type="password" placeholder="Password" name="password" autocomplete="off" required/>
-                <button type="submit" style="cursor: pointer;">Sign Up</button>
-            </form>
-        </div>
-
-        <div class="form-container sign-in-container">
-            <form action="/abc" method="post">
-                <h1>Sign in</h1>
-                <div class="social-container">
-                    <a href="" target="_blank" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="" target="_blank" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="" target="_blank" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>Or use your account</span>
-                <input type="text" placeholder="Username" name="username" autocomplete="off" required/>
-                <input type="password" placeholder="Password" name="password" autocomplete="off" required/>
-                <a href="" target="_blank">Forgot your password?</a>
-                <button type="submit" style="cursor: pointer;">Sign In</button>
-            </form>
-        </div>
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn" style="cursor: pointer;">Sign In</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start journey with us</p>
-                    <button class="ghost" id="signUp" style="cursor: pointer;">Sign Up</button>
-                </div>
-            </div>
-        </div>
+  <body>
+    <% if (typeof failureMessage !== 'undefined') { %>
+    <div id="failureMessage" class="alert alert-danger mt-3" role="alert">
+      <%= failureMessage %>
     </div>
+    <script>
+      setTimeout(function () {
+        var failureMessage = document.getElementById("failureMessage");
+        if (failureMessage) {
+          failureMessage.remove();
+        }
+      }, 5000);
+    </script>
+    <% } %>
+
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form action="/signup" method="post">
+          <h1>Create Account</h1>
+          <div class="social-container">
+            <a href="" target="_blank" class="social"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="/" target="_blank" class="social"
+              ><i class="fab fa-google-plus-g"></i
+            ></a>
+            <a href="" target="_blank" class="social"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+          <span>Or use your email ID</span>
+          <input
+            type="email"
+            placeholder="@gmail.com"
+            name="email"
+            autocomplete="off"
+            pattern=".+@gmail\.com$"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Name"
+            name="username"
+            autocomplete="off"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            autocomplete="off"
+            required
+          />
+          <button type="submit" style="cursor: pointer">Sign Up</button>
+        </form>
+      </div>
+
+      <div class="form-container sign-in-container">
+        <form action="/abc" method="post">
+          <h1>Sign in</h1>
+          <div class="social-container">
+            <a href="" target="_blank" class="social"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="" target="_blank" class="social"
+              ><i class="fab fa-google-plus-g"></i
+            ></a>
+            <a href="" target="_blank" class="social"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+          <span>Or use your account</span>
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            autocomplete="off"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            autocomplete="off"
+            required
+          />
+          <a href="" target="_blank">Forgot your password?</a>
+          <button type="submit" style="cursor: pointer">Sign In</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>
+              To keep connected with us please login with your personal info
+            </p>
+            <button class="ghost" id="signIn" style="cursor: pointer">
+              Sign In
+            </button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button class="ghost" id="signUp" style="cursor: pointer">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script>
+      // Regular expression to validate email ending with "vit.edu"
+      var emailRegex = /^[a-zA-Z0-9._%+-]+@vit\.edu$/;
+
+      // Function to validate email
+      function validateEmail(email) {
+        return emailRegex.test(email);
+      }
+
+      // Example usage:
+      var emailInput = "example@vit.edu";
+      if (validateEmail(emailInput)) {
+        console.log("Email is valid.");
+      } else {
+        console.log("Email is not valid.");
+      }
+    </script> -->
     <script src="/javascripts/mainlogin.js"></script>
-</body>
-
+  </body>
 </html>
-

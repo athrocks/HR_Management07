@@ -11,6 +11,44 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
   </head>
   <body>
+    <% if (typeof successMessage !== 'undefined') { %>
+    <div
+      id="successMessage"
+      class="alert alert-success mt-3 mx-auto"
+      role="alert"
+    >
+      <div class="d-flex justify-content-center align-items-center">
+        <%= successMessage %>
+      </div>
+    </div>
+    <script>
+      setTimeout(function () {
+        var successMessage = document.getElementById("successMessage");
+        if (successMessage) {
+          successMessage.remove();
+        }
+      }, 5000);
+    </script>
+    <% } %> <% if (typeof failureMessage !== 'undefined') { %>
+    <div
+      id="failureMessage"
+      class="alert alert-danger mt-3 mx-auto"
+      role="alert"
+    >
+      <div class="d-flex justify-content-center align-items-center">
+        <%= failureMessage %>
+      </div>
+    </div>
+    <script>
+      setTimeout(function () {
+        var failureMessage = document.getElementById("failureMessage");
+        if (failureMessage) {
+          failureMessage.remove();
+        }
+      }, 5000);
+    </script>
+    <% } %>
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4"></div>
@@ -38,7 +76,7 @@
                     type="email"
                     class="form-control"
                     id="email"
-                    name="email2"
+                    name="email"
                     required
                     autocomplete="off"
                     placeholder="Enter Employee email"
@@ -102,35 +140,5 @@
         }
       });
     </script>
-
-    <% if (typeof successMessage !== 'undefined') { %>
-      <div id="successMessage" class="alert alert-success mt-3" role="alert">
-        <%= successMessage %>
-      </div>
-      <script>
-        setTimeout(function() {
-          var successMessage = document.getElementById('successMessage');
-          if (successMessage) {
-            successMessage.remove();
-          }
-        }, 5000);
-      </script>
-    <% } %>    
-
-    <% if (typeof failureMessage !== 'undefined') { %>
-      <div id="failureMessage" class="alert alert-danger mt-3" role="alert">
-        <%= failureMessage %>
-      </div>
-      <script>
-        setTimeout(function() {
-          var failureMessage = document.getElementById('failureMessage');
-          if (failureMessage) {
-            failureMessage.remove();
-          }
-        }, 5000);
-      </script>
-    <% } %>
-    
-    
   </body>
 </html>

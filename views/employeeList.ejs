@@ -7,9 +7,8 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="/stylesheets/style34.css">
+    <link rel="stylesheet" href="/stylesheets/style34.css" />
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
-
   </head>
   <body>
     <div class="container mt-5">
@@ -21,19 +20,39 @@
             <th>Email</th>
             <th>Current Project</th>
             <th>Project Domain</th>
+            <th>Action</th>
+            <!-- New column for action -->
           </tr>
         </thead>
         <tbody>
           <% employees.forEach(employee => { %>
           <tr>
             <td><%= employee.employeeName %></td>
-            <td><%= employee.email2 %></td>
+            <td><%= employee.email %></td>
             <td><%= employee.projectName %></td>
             <td><%= employee.projectDomain %></td>
+            <td>
+              <form action="/delete_employees_button" method="post">
+                <input
+                  type="hidden"
+                  name="employeeId"
+                  value="<%= employee.id %>"
+                />
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </td>
           </tr>
           <% }) %>
         </tbody>
       </table>
+      <form
+        action="/employee_add_data_button"
+        method="post"
+        class="text-center"
+      >
+        <button type="submit" class="btn btn-primary">Add Employee</button>
+      </form>
     </div>
+    
   </body>
 </html>

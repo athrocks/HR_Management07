@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Delete Employee</title>
+    <title>Delete Work Experience</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -18,10 +18,10 @@
         <div class="col-md-4">
           <div class="card mt-5">
             <div class="card-body">
-              <h1 class="text-center mb-4"><b>Delete Employee</b></h1>
+              <h1 class="text-center mb-4"><b>Delete Work Experience</b></h1>
 
               <form
-                action="/delete_employee"
+                action="/delete_employee2"
                 method="post"
                 id="deleteEmployeeForm"
               >
@@ -31,7 +31,7 @@
                     type="text"
                     class="form-control"
                     id="name"
-                    name="employeeName"
+                    name="employeeNameW"
                     autocomplete="off"
                     required
                     placeholder="Enter Employee full name"
@@ -43,7 +43,7 @@
                     type="email"
                     class="form-control"
                     id="email"
-                    name="email"
+                    name="emailW"
                     required
                     autocomplete="off"
                     placeholder="Enter Employee email"
@@ -72,9 +72,7 @@
         }
       }, 5000);
     </script>
-    <% } %> 
-    
-    <% if (typeof failureMessage !== 'undefined') { %>
+    <% } %> <% if (typeof failureMessage !== 'undefined') { %>
     <div id="failureMessage" class="alert alert-danger mt-3" role="alert">
       <%= failureMessage %>
     </div>
@@ -87,6 +85,5 @@
       }, 5000);
     </script>
     <% } %>
-    
   </body>
 </html>

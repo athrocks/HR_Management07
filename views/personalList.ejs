@@ -21,19 +21,37 @@
             <th>Email</th>
             <th>Age</th>
             <th>Blood Group</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
           <% personal.forEach(personal1 => { %>
           <tr>
-            <td><%= personal1.employeeName4 %></td>
-            <td><%= personal1.email4 %></td>
+            <td><%= personal1.employeeName %></td>
+            <td><%= personal1.email %></td>
             <td><%= personal1.age %></td>
             <td><%= personal1.bloodGroup %></td>
+            <td>
+              <form action="/delete_personal_details_button" method="post">
+                <input
+                  type="hidden"
+                  name="personalId"
+                  value="<%= personal1.id %>"
+                />
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </td>
           </tr>
           <% }) %>
         </tbody>
       </table>
+      <form
+      action="/employee_add_personal_details_button"
+      method="post"
+      class="text-center"
+    >
+      <button type="submit" class="btn btn-primary">Add Personal Details</button>
+    </form>
     </div>
   </body>
 </html>
