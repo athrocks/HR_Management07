@@ -6,9 +6,28 @@
     <title>Your app</title>
     <link rel="stylesheet" href="/stylesheets/stylebutton2.css" />
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
-
+    <style>
+      /* CSS for the home button */
+      .home-button {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 5px;
+      }
+  </style>
   </head>
   <body>
+    <a href="/" class="home-button">Home</a>
     <div class="button-container">
       <form action="/employee_add_personal_details_button" method="post">
         <button type="submit" class="button">Add New Data</button>
